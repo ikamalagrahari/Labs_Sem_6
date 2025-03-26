@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$location() Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <p>Current URL: {{ currentUrl }}</p>
+        <button ng-click="changeUrl()">Change URL</button>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $location) {
+            $scope.currentUrl = $location.absUrl();
+            $scope.changeUrl = function() {
+                window.location.href = "https://www.google.com";
+            };
+        });
+    </script>
+</body>
+</html>

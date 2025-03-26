@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Routing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+</head>
+<body>
+    <h2>AngularJS Routing Example</h2>
+    <a href="#!home">Home</a> | 
+    <a href="#!about">About</a>
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/home", {
+                template: "<h3>Welcome to the Home Page</h3><p>This is the home section.</p>"
+            })
+            .when("/about", {
+                template: "<h3>About Us</h3><p>This is the about page.</p>"
+            })
+            .otherwise({
+                redirectTo: "/home"
+            });
+        });
+    </script>
+</body>
+</html>

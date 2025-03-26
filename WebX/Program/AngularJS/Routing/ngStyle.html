@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-style Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <h3>Change Text Color</h3>
+        <p ng-style="{'color': textColor}">This text changes color!</p>
+        <button ng-click="textColor='red'">Red</button>
+        <button ng-click="textColor='blue'">Blue</button>
+        <button ng-click="textColor='green'">Green</button>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.textColor = "black"; // Default color
+        });
+    </script>
+</body>
+</html>
+
+

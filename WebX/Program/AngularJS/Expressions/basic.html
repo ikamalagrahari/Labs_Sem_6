@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Expressions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <h2>Simple Expression</h2>
+        <p>5 + 10 = {{ 5 + 10 }}</p>
+        <p>Multiplication: {{ 6 * 7 }}</p>
+        <p>Concatenation: {{ "Hello" + " AngularJS" }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            // No scope variables needed here
+        });
+    </script>
+</body>
+</html>

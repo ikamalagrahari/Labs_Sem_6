@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$timeout() Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <h2>{{ message }}</h2>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $timeout) {
+            $scope.message = "Wait for it...";
+            $timeout(function() {
+                $scope.message = "Hello, AngularJS!";
+            }, 3000); // Change message after 3 seconds
+        });
+    </script>
+</body>
+</html>

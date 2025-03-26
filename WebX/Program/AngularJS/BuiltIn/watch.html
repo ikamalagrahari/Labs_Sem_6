@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$watch() Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <p>Type something: <input type="text" ng-model="userInput"></p>
+        <p>Old Value: {{ oldValue }}</p>
+        <p>New Value: {{ newValue }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.userInput = "";
+            $scope.oldValue = "";
+            $scope.newValue = "";
+
+            $scope.$watch('userInput', function(newVal, oldVal) {
+                $scope.oldValue = oldVal;
+                $scope.newValue = newVal;
+            });
+        });
+    </script>
+</body>
+</html>
